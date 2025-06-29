@@ -1,1 +1,8 @@
-# Debouncing-circuit
+# Debouncing-circuit and Edge Detection
+This project focuses on designing and implementing FSM-based modules for switch debouncing and edge detection. The modules are developed using Verilog and synthesized for deployment on an FPGA.
+# Overview
+Mechanical switches often suffer from signal bouncing, leading to multiple unintended transitions during press or release. This project addresses the issue by implementing a hardware debouncing circuit along with edge detection logic to reliably capture rising and falling transitions of the switch signal.
+# Core Components
+The project has many key hardware components that are used to ensure reliable switching. Finite state machine (FSM) modules are designed to implement effective debounce logic, filtering out glitches caused by mechanical bouncing. An edge detection circuit is added to detect both rising and falling transitions of the input signal. The entire design is written in Verilog HDL and is synthesized using standard FPGA hardware design tools. After synthesis, bitstreams are generated for FPGA programming. 
+# Project Description
+This project identifies valid button press events by detecting edges and filtering out any false transitions caused by mechanical bouncing. To ensure only genuine presses are registered, a debouncing mechanism is implemented using a Finite State Machine (FSM), which considers a signal change valid only if it persists for more than 20 milliseconds. A two-stage synchronizer is used to safely bring the asynchronous button input into the clock domain, avoiding metastability issues. The system’s correctness is demonstrated by incrementing counters in response to button presses and comparing the results with and without debouncing. Output is displayed on a seven-segment display, where carefully designed timing control, combinational logic, and multiplexing are used to manage the refresh rate and correctly display different digits on the FPGA board.
